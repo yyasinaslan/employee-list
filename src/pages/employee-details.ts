@@ -1,18 +1,16 @@
-import { html, LitElement } from "lit";
-import { customElement } from "lit/decorators.js";
+import {html, LitElement} from "lit";
+import {customElement, property} from "lit/decorators.js";
 
 
-
-const TAG = 'app-employee-details' as const;
-
-@customElement(TAG)
+@customElement('app-employee-details')
 export class EmployeeDetailsComponent extends LitElement {
-    static readonly TagName = TAG;
 
+    @property({type: String})
+    id!: string;
 
     protected render() {
         return html`
-        <h1>Element Detail component</h1>
+            <h1>Element Detail component ${this.id}</h1>
         `
     }
 }

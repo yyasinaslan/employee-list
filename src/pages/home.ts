@@ -1,37 +1,18 @@
-import {RouterLocation} from "@vaadin/router";
 import {html, LitElement} from "lit";
-import {customElement, state} from "lit/decorators.js";
+import {customElement} from "lit/decorators.js";
+import {localized} from "@lit/localize";
 
-const TAG = 'app-home' as const;
-
-@customElement(TAG)
+@localized()
+@customElement('app-home')
 export class HomeComponent extends LitElement {
-    static readonly TagName = TAG;
 
-    @state()
-    employeeId = '';
-
-    @state()
-    message = 'Hosgeldin';
-
-    async onBeforeEnter(location: RouterLocation) {
-        console.log(location);
-        this.employeeId = location.params.employeeId as string;
-    }
 
     protected render() {
-
-
         return html`
-            <div>Home == ${this.message} == ${this.employeeId}</div>
-            <button @click="${() => this.message = 'Merhaba'}">Tikla</button>
+            <h1>Home Page</h1>
+            <lang-selector/>
+            <a href="/employees">Employee List</a>
+            <a href="/employees/add">Add New Employee</a>
         `
     }
 }
-
-
-class OzelComponent extends HTMLElement {
-
-}
-
-customElements.define('benim-ozel-etiketim', OzelComponent)

@@ -2,12 +2,8 @@ import { html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
 
 
-
-const TAG = 'app-employee-list' as const;
-
-@customElement(TAG)
+@customElement('app-employee-list')
 export class EmployeeListComponent extends LitElement {
-    static readonly TagName = TAG;
 
     protected render() {
         return html`
