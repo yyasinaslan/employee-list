@@ -6,21 +6,19 @@
   <source>Home</source>
   <target>Ana Sayfa</target>
 </trans-unit>
-<trans-unit id="saed7d3734ce7f09d">
-  <source>Hello <x id="0" equiv-text="${this.name}"/></source>
-  <target>Merhaba <x id="0" equiv-text="${this.name}"/></target>
+<trans-unit id="scba00271d50c74f6">
+  <source>Employees</source>
+  <target>Çalışanlar</target>
 </trans-unit>
-<trans-unit id="s4caed5b7a7e5d89b">
-  <source>English</source>
-  <target>İngilizce</target>
+<trans-unit id="s32c9b3dd030fc24c">
+  <source>Add Employee</source>
+  <target>Çalışan Ekle</target>
 </trans-unit>
-<trans-unit id="s9d2d00982edafabb">
-  <source>Turkish</source>
-  <target>Türkçe</target>
+<trans-unit id="s7b07ef55e99a3fd0">
+  <source>Dark Theme</source>
 </trans-unit>
-<trans-unit id="s3db6c3999daeecdb">
-  <source>Employee List</source>
-  <target>Çalışan Listesi</target>
+<trans-unit id="s587adf7955f74f3a">
+  <source>Light Theme</source>
 </trans-unit>
 </body>
 </file>

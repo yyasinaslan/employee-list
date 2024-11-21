@@ -2,37 +2,72 @@ import {css, html} from "lit";
 import {customElement} from "lit/decorators.js";
 import {localized, msg} from "@lit/localize";
 import {MobxLitElement} from "@adobe/lit-mobx";
-import {appState} from "../../state/app-state.ts";
+import {sharedStyles} from "../../styles/shared-styles.ts";
 
 
 @localized()
 @customElement('app-header')
 export class HeaderComponent extends MobxLitElement {
 
-    private readonly appState = appState;
+    static styles = [
+        ...sharedStyles,
+        css`
+            :host {
+                display: flex;
+                padding-inline: 1rem;
+                gap: 1rem;
+                flex-wrap: wrap;
 
-    static styles = css`
-        :host {
-            display: block;
-            padding: 1rem;
-        }
-    `
+                align-items: center;
+            }
+
+            .brand {
+                font-size: 1.6em;
+                text-decoration: none;
+                color: hsl(var(--foreground));
+            }
+
+            .filler {
+                flex: 1 1 auto;
+            }
+
+            nav {
+                display: flex;
+                gap: 1em;
+                flex-wrap: wrap;
+
+                a {
+                    padding: 0.5rem 1rem;
+                    color: hsl(var(--foreground));
+
+                    &:hover {
+                        color: hsl(var(--primary));
+                    }
+                }
+            }
+        `
+    ]
+
+
+    constructor() {
+        super();
+    }
+
+    updated(){
+        console.log('updated', location)
+    }
 
     protected render() {
         return html`
+            <a href="/" class="brand">Employee List App</a>
+            <div class="filler"></div>
+            <nav>
+                <a href="/">${msg('Home')}</a>
+                <a href="/employees">${msg('Employees')}</a>
+                <a href="/employees/add">${msg('Add Employee')}</a>
+            </nav>
+            <theme-selector></theme-selector>
             <lang-selector></lang-selector>
-            <div>Current Lang = ${this.appState.lang}</div>
-            <ul>
-                <li>
-                    <a href="/">${msg('Home')}</a>
-                </li>
-                <li>
-                    <a href="/employees">${msg('Employee List')}</a>
-                </li>
-                <li>
-                    <a href="/employees/add">Add new employee</a>
-                </li>
-            </ul>
         `
     }
 }
