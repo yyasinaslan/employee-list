@@ -39,8 +39,8 @@ jobs:
       - run: npm run build --if-present
       - name: Configure pages
         uses: actions/configure-pages@v5.0.0
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v4.4.3
+#      - name: Upload a Build Artifact
+#        uses: actions/upload-artifact@v4.4.3
       - name: Deploy to pages
         uses: actions/upload-pages-artifact@v3.0.1
         with:
