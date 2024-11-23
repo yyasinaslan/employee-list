@@ -1,13 +1,12 @@
-import {css, html} from "lit";
+import {css, html, LitElement} from "lit";
 import {customElement} from "lit/decorators.js";
 import {localized, msg} from "@lit/localize";
-import {MobxLitElement} from "@adobe/lit-mobx";
 import {sharedStyles} from "../../styles/shared-styles.ts";
 
 
 @localized()
 @customElement('app-header')
-export class HeaderComponent extends MobxLitElement {
+export class HeaderComponent extends LitElement {
 
     static styles = [
         ...sharedStyles,
@@ -47,15 +46,6 @@ export class HeaderComponent extends MobxLitElement {
             }
         `
     ]
-
-
-    constructor() {
-        super();
-    }
-
-    updated(){
-        console.log('updated', location)
-    }
 
     protected render() {
         return html`

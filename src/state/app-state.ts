@@ -1,39 +1,32 @@
-import {action, makeObservable, observable} from "mobx";
 import {LocalStorageHelper} from "../helpers/local-storage-helper.ts";
 import {setLocale} from "../localization.ts";
+import {signal} from "@lit-labs/preact-signals";
 
 type Theme = 'dark' | 'light';
 
 class AppState {
 
-    lang: string = '';
+    lang = signal('en');
 
-    theme: Theme = 'dark';
+    theme = signal<Theme>('light');
 
     constructor(initialState: { lang: string, theme: Theme }) {
-        makeObservable(this, {
-            lang: observable,
-            theme: observable,
-            setLang: action,
-            setTheme: action,
-        });
-
-        this.lang = initialState.lang;
-        this.theme = initialState.theme;
+        this.lang.value = initialState.lang;
+        this.theme.value = initialState.theme;
 
         setLocale(initialState.lang);
-        this.applyTheme(this.theme)
+        this.applyTheme(this.theme.value)
     }
 
     public setLang(lang: string) {
-        this.lang = lang;
+        this.lang.value = lang;
         setLocale(lang);
         this.saveState();
     }
 
     public setTheme(theme: Theme) {
-        this.theme = theme;
-        this.applyTheme(this.theme)
+        this.theme.value = theme;
+        this.applyTheme(this.theme.value)
         this.saveState();
     }
 
@@ -46,7 +39,10 @@ class AppState {
     }
 
     private saveState() {
-        LocalStorageHelper.set('appState', this)
+        LocalStorageHelper.set('appState', {
+            theme: this.theme.value,
+            lang: this.lang.value,
+        })
     }
 }
 

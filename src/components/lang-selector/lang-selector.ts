@@ -1,11 +1,11 @@
-import {css, html} from "lit";
+import {css, html, LitElement} from "lit";
 import {customElement} from "lit/decorators.js";
 import {localized} from "@lit/localize";
 import {getLocale} from "../../localization.ts";
 import {allLocales} from "../../i18n-generated/locale-codes.ts";
-import {MobxLitElement} from "@adobe/lit-mobx";
 import {appState} from "../../state/app-state.ts";
 import {sharedStyles} from "../../styles/shared-styles.ts";
+import {SignalWatcher} from "@lit-labs/preact-signals";
 
 
 const locales: { [key in typeof allLocales[number]]: string } = {
@@ -15,7 +15,7 @@ const locales: { [key in typeof allLocales[number]]: string } = {
 
 @localized()
 @customElement('lang-selector')
-export class LangSelectorComponent extends MobxLitElement {
+export class LangSelectorComponent extends SignalWatcher(LitElement) {
 
     private readonly appState = appState;
 
@@ -35,7 +35,7 @@ export class LangSelectorComponent extends MobxLitElement {
     protected render() {
         return html`
             ${allLocales.map(localeName => html`
-                <button type="button" class="${localeName == this.appState.lang ? 'primary' : 'secondary'}"
+                <button type="button" class="${localeName == this.appState.lang.value ? 'primary' : 'secondary'}"
                         @click=${() => this.changeLocale(localeName)}>${locales[localeName]}
                 </button>
             `)}

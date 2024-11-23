@@ -6,6 +6,8 @@ export const buttonStyles = css`
         --button-fg: hsl(0 0 10%);
         --button-border: hsl(var(--border));
 
+        font-size: inherit;
+        line-height: inherit;
         border: 1px solid var(--button-border);
         padding: 0.5rem 1rem;
         border-radius: var(--radius, 0.5rem);
