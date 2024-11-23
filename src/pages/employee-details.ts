@@ -29,11 +29,11 @@ const formFields = {
     email: () => msg("Email"),
     department: {
         label: () => msg("Department"),
-        formatter: (val: string) => departmentList[val]()
+        formatter: (val: string) => (departmentList as any)[val]()
     },
     position: {
         label: () => msg("Position"),
-        formatter: (val: string) => positionList[val]()
+        formatter: (val: string) => (positionList as any)[val]()
     },
 }
 
