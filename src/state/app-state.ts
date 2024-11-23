@@ -1,8 +1,8 @@
 import {LocalStorageHelper} from "../helpers/local-storage-helper.ts";
 import {setLocale} from "../localization.ts";
 import {signal} from "@lit-labs/preact-signals";
+import {Theme} from "../models/ui/theme-types.ts";
 
-type Theme = 'dark' | 'light';
 
 class AppState {
 
@@ -16,12 +16,14 @@ class AppState {
 
         setLocale(initialState.lang);
         this.applyTheme(this.theme.value)
+        this.applyLang(this.lang.value)
     }
 
     public setLang(lang: string) {
         this.lang.value = lang;
         setLocale(lang);
         this.saveState();
+        this.applyLang(lang);
     }
 
     public setTheme(theme: Theme) {
@@ -36,6 +38,10 @@ class AppState {
         } else {
             document.documentElement.classList.add('dark');
         }
+    }
+
+    private applyLang(lang: string) {
+        document.documentElement.lang = lang;
     }
 
     private saveState() {

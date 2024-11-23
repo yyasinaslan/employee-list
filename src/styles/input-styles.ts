@@ -2,7 +2,7 @@ import {css} from "lit";
 
 
 export const inputStyles = css`
-    input {
+    input, select {
         padding: 0.5rem 1rem;
         background: hsl(var(--input));
         color: hsl(var(--foreground));

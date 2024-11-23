@@ -6,11 +6,17 @@ import {allLocales} from "../../i18n-generated/locale-codes.ts";
 import {appState} from "../../state/app-state.ts";
 import {sharedStyles} from "../../styles/shared-styles.ts";
 import {SignalWatcher} from "@lit-labs/preact-signals";
+import {getFlagUrl} from "../../helpers/flags.ts";
 
 
 const locales: { [key in typeof allLocales[number]]: string } = {
     "en": `English`,
     "tr": `Türkçe`
+}
+
+const flags: { [key in typeof allLocales[number]]: string } = {
+    "en": 'gb',
+    "tr": 'tr'
 }
 
 @localized()
@@ -29,6 +35,10 @@ export class LangSelectorComponent extends SignalWatcher(LitElement) {
             button.active {
                 background-color: hsl(var(--primary));
             }
+
+            img.flag-image {
+                height: 1em;
+            }
         `
     ]
 
@@ -36,7 +46,8 @@ export class LangSelectorComponent extends SignalWatcher(LitElement) {
         return html`
             ${allLocales.map(localeName => html`
                 <button type="button" class="${localeName == this.appState.lang.value ? 'primary' : 'secondary'}"
-                        @click=${() => this.changeLocale(localeName)}>${locales[localeName]}
+                        @click=${() => this.changeLocale(localeName)} title=${locales[localeName]}>
+                    <img src=${getFlagUrl(flags[localeName])} alt=${locales[localeName]} class="flag-image">
                 </button>
             `)}
         `

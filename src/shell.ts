@@ -24,7 +24,7 @@ export class AppShell extends LitElement {
             app-header {
                 background-color: hsl(var(--background));
                 border-bottom: 1px solid hsl(var(--border));
-                
+
                 padding: 1rem;
             }
 
@@ -38,6 +38,11 @@ export class AppShell extends LitElement {
     ]
 
     private _router = new Router(this, routes);
+
+    constructor() {
+        super();
+        window.router = this._router;
+    }
 
     protected render() {
 

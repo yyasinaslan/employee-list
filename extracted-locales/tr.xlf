@@ -14,29 +14,29 @@
   <source>Add Employee</source>
   <target>Çalışan Ekle</target>
 </trans-unit>
-<trans-unit id="s7b07ef55e99a3fd0">
-  <source>Dark Theme</source>
-</trans-unit>
-<trans-unit id="s587adf7955f74f3a">
-  <source>Light Theme</source>
-</trans-unit>
 <trans-unit id="s3db6c3999daeecdb">
   <source>Employee List</source>
+  <target>Çalışan Listesi</target>
 </trans-unit>
 <trans-unit id="s0bf5d587a07fcaea">
   <source>Add New Employee</source>
+  <target>Yeni Çalışan Ekle</target>
 </trans-unit>
 <trans-unit id="s2c2b04f2561a1d4b">
   <source>Analytics</source>
+  <target>Analiz</target>
 </trans-unit>
 <trans-unit id="s24aadbfb1b1a1a11">
   <source>Tech</source>
+  <target>Teknik</target>
 </trans-unit>
 <trans-unit id="s7404d9208a486318">
   <source>Junior</source>
+  <target>Başlangıç Seviyesi</target>
 </trans-unit>
 <trans-unit id="sacc4d771f79ccced">
   <source>Medior</source>
+  <target>Orta Seviye</target>
 </trans-unit>
 <trans-unit id="s8a37652cc28d3c55">
   <source>Senior</source>
@@ -48,27 +48,174 @@
 </trans-unit>
 <trans-unit id="s95a75a2392af5780">
   <source>Last Name</source>
+  <target>Soyisim</target>
 </trans-unit>
 <trans-unit id="s772528836550622c">
   <source>Date of Employment</source>
+  <target>İşe giriş tarihi</target>
 </trans-unit>
 <trans-unit id="s53802e3f37d072a7">
   <source>Date of Birth</source>
+  <target>Doğum Tarihi</target>
 </trans-unit>
 <trans-unit id="sf1bc83d2509bafcf">
   <source>Phone</source>
+  <target>Telefon</target>
 </trans-unit>
 <trans-unit id="sd1f44f1a8bc20e67">
   <source>Email</source>
+  <target>Email</target>
 </trans-unit>
 <trans-unit id="s1e45a4d7635fbda7">
   <source>Department</source>
+  <target>Departman</target>
 </trans-unit>
 <trans-unit id="sc1611c0558728a2a">
   <source>Position</source>
+  <target>Pozisyon</target>
 </trans-unit>
 <trans-unit id="s8af61807443f32a4">
   <source>Actions</source>
+  <target>Eylemler</target>
+</trans-unit>
+<trans-unit id="s1b603e9e830cf1e6">
+  <source>Select/Deselect All</source>
+  <target>Hepsini Seç/Seçimi kaldır</target>
+</trans-unit>
+<trans-unit id="sc4cb619d2fc19d71">
+  <source>Select/Deselect <x id="0" equiv-text="${rowData.firstName} ${rowData.lastName}"/></source>
+  <source>Seç/Seçimi kaldır <x id="0" equiv-text="${rowData.firstName} ${rowData.lastName}"/></source>
+</trans-unit>
+<trans-unit id="s09240e07b5b8d640">
+  <source>ID</source>
+  <target>ID</target>
+</trans-unit>
+<trans-unit id="s64ef2a6c2dd1d3d1">
+  <source>Edit</source>
+  <target>Düzenle</target>
+</trans-unit>
+<trans-unit id="sdc673e73b5c13aea">
+  <source>Delete</source>
+  <target>Sil</target>
+</trans-unit>
+<trans-unit id="sff561edb0ebb5a3b">
+  <source>Prev Page</source>
+  <target>Önceki Sayfa</target>
+</trans-unit>
+<trans-unit id="sd1dd00fc6f052e83">
+  <source>Next Page</source>
+  <target>Sonraki Sayfa</target>
+</trans-unit>
+<trans-unit id="s92f2749c8c76056f">
+  <source>Found <x id="0" equiv-text="${employeeState.filteredTotal.value}"/> records.</source>
+  <target><x id="0" equiv-text="${employeeState.filteredTotal.value}"/> öğe bulundu.</target>
+</trans-unit>
+<trans-unit id="sd35316f2a4cffb9b">
+  <source>Total <x id="0" equiv-text="${employeeState.total}"/></source>
+  <target>Toplam <x id="0" equiv-text="${employeeState.total}"/> öğe</target>
+</trans-unit>
+<trans-unit id="s5d929ff1619ac0c9">
+  <source>Search</source>
+  <target>Ara</target>
+</trans-unit>
+<trans-unit id="s78fe0c9923f7b75a">
+  <source>Table Mode</source>
+  <target>Tablo Modu</target>
+</trans-unit>
+<trans-unit id="s3080738078fda91c">
+  <source>List Mode</source>
+  <target>Liste Modu</target>
+</trans-unit>
+<trans-unit id="s2ca0e553b8103993">
+  <source>Switch to dark Theme</source>
+  <target>Karanlık temaya geç</target>
+</trans-unit>
+<trans-unit id="sc6c004e7bc8a7f0b">
+  <source>Switch to light Theme</source>
+  <target>Aydınlık temaya geç</target>
+</trans-unit>
+<trans-unit id="hb42f09076a734afe">
+  <source>
+                        Show <x id="0" equiv-text="&lt;select @change=&quot;${this.setLimit}&quot;&gt;&#10;                            ${employeeState.pageLimits.map(limit =&gt; html `&#13;&#10;                                &lt;option value=${limit} .selected=${employeeState.limit.value == limit}&gt;${limit}&#13;&#10;                                &lt;/option&gt;&#13;&#10;                            `)}&#10;                        &lt;/select&gt;"/> per page.
+                    </source>
+  <target>Sayfa başına <x id="0" equiv-text="&lt;select @change=&quot;${this.setLimit}&quot;&gt;&#10;                            ${this.employeeState.pageLimits.map(limit =&gt; html `&#13;&#10;                                &lt;option value=${limit} .selected=${this.employeeState.limit.value == limit}&gt;${limit}&#13;&#10;                                &lt;/option&gt;&#13;&#10;                            `)}&#10;                        &lt;/select&gt;"/> öğe göster.
+                    </target>
+</trans-unit>
+<trans-unit id="s27707a7616f7f789">
+  <source>First name is required</source>
+  <target>İsim gerekli</target>
+</trans-unit>
+<trans-unit id="sb7c9b2995d6869b1">
+  <source>Last name is required</source>
+  <target>Soyisim gerekli</target>
+</trans-unit>
+<trans-unit id="s3f6b9a8de37059e4">
+  <source>Employment date is required</source>
+  <target>İşe giriş tarihi gerekli</target>
+</trans-unit>
+<trans-unit id="s84daa434534cf193">
+  <source>Birth date is required</source>
+  <target>Doğum tarihi gerekli</target>
+</trans-unit>
+<trans-unit id="s04c8b8b0e1034f09">
+  <source>Phone number is required</source>
+  <target>Telefon numarası gerekli</target>
+</trans-unit>
+<trans-unit id="sf07904be22a6165a">
+  <source>Email is required</source>
+  <target>Email gerekli</target>
+</trans-unit>
+<trans-unit id="sf71f9578ca2ddb9a">
+  <source>Department is required</source>
+  <target>Departman gerekli</target>
+</trans-unit>
+<trans-unit id="s35911e54e5c305df">
+  <source>Position is required</source>
+  <target>Pozisyon gerekli</target>
+</trans-unit>
+<trans-unit id="s268ecd1cef45a9a8">
+  <source>Are you sure?</source>
+  <target>Emin misin?</target>
+</trans-unit>
+<trans-unit id="hb115904a4bf2c791">
+  <source>Selected employee record of <x id="0" equiv-text="&lt;b class=&quot;text-destructive&quot;&gt;${this.deleteDialogData?.firstName}&#10;                        ${this.deleteDialogData?.lastName}&lt;/b&gt;"/> will be deleted!</source>
+  <source><x id="0" equiv-text="&lt;b class=&quot;text-destructive&quot;&gt;${this.deleteDialogData?.firstName}&#10;                        ${this.deleteDialogData?.lastName}&lt;/b&gt;"/> adlı çalışan için kayıt silinecek!</source>
+</trans-unit>
+<trans-unit id="s2ceb11be2290bb1b">
+  <source>Cancel</source>
+  <target>İptal</target>
+</trans-unit>
+<trans-unit id="s0b58622dcdbae1ea">
+  <source>Add new employee</source>
+  <target>Yeni çalışan ekle</target>
+</trans-unit>
+<trans-unit id="sab459038e3c6bcb8">
+  <source>First name</source>
+  <target>İsim</target>
+</trans-unit>
+<trans-unit id="s6e8059179423bfa0">
+  <source>Last name</source>
+  <target>Soyisim</target>
+</trans-unit>
+<trans-unit id="sf0167725068ea79e">
+  <source>Birth date</source>
+  <target>Doğum Tarihi</target>
+</trans-unit>
+<trans-unit id="s8ae89c1267898863">
+  <source>Edit employee</source>
+  <target>Çalışanı Düzenle</target>
+</trans-unit>
+<trans-unit id="s7edbc8d1f6217c34">
+  <source>Check difference before proceeding!</source>
+  <target>Devam etmeden önce kontrol et!</target>
+</trans-unit>
+<trans-unit id="s8b0432eecbd8b034">
+  <source>Update</source>
+  <target>Güncelle</target>
+</trans-unit>
+<trans-unit id="s33f85f24c0f5f008">
+  <source>Save</source>
+  <target>Kaydet</target>
 </trans-unit>
 </body>
 </file>
