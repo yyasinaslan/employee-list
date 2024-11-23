@@ -42,6 +42,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+      artifact_name: dist
 
     # Specify runner + deployment step
     runs-on: ubuntu-latest
