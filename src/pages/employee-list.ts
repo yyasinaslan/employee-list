@@ -283,7 +283,7 @@ export class EmployeeListComponent extends SignalWatcher(LitElement) {
                 <div>
                     ${msg(html`Selected employee record of <b
                             class="text-destructive">${this.deleteDialogData?.firstName}
-                        ${this.deleteDialogData?.lastName}</b> will be deleted!`)}
+                        ${this.deleteDialogData?.lastName}</b> will be deleted!`, {id: 'deleteConfirm'})}
                 </div>
                 <div class="flex gap-1" style="justify-content: flex-end">
                     <button type="button" class="destructive" @click=${() => this.confirmDelete()}>${msg('Delete')}

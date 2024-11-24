@@ -43,7 +43,7 @@ export const routes: RouteConfig[] = [
         }
     },
     {
-        path: environment.baseUrl + '(.*)',
+        path: environment.baseUrl ? environment.baseUrl + '/(.*)' : '(.*)',
         render: () => html`
             <app-not-found></app-not-found>`,
         enter: async () => {

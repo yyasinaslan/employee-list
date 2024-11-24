@@ -5,14 +5,14 @@ import {LocalStorageHelper} from "../helpers/local-storage-helper.ts";
 import {appState} from "./app-state.ts";
 
 
-class EmployeesState {
+export class EmployeesState {
 
     readonly pageLimits = [10, 25, 50, 100]
 
     // Timeout ref
     private searchDebounce?: any;
 
-    private data = signal<Employee[]>([])
+    data = signal<Employee[]>([])
     private searchTerm = signal('');
 
     /**

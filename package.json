@@ -6,11 +6,15 @@
   "packageManager": "npm@10.0.0",
   "scripts": {
     "dev": "vite",
+    "start": "vite",
     "build": "tsc && vite build && cp dist/index.html dist/404.html",
     "preview": "vite preview",
     "extract-i18n": "lit-localize extract",
     "build-i18n": "lit-localize build",
-    "test": "wdio run ./wdio.conf.ts",
+    "test": "vitest",
+    "e2e": "playwright test",
+    "e2e-ui": "playwright test --ui",
+    "coverage": "vitest run --coverage",
     "lint": "eslint \"src/**/*.{js,ts}\""
   },
   "dependencies": {
@@ -25,18 +29,17 @@
     "@eslint/js": "^9.15.0",
     "@faker-js/faker": "^9.2.0",
     "@lit/localize-tools": "^0.8.0",
-    "@testing-library/webdriverio": "^3.2.1",
-    "@types/mocha": "^10.0.10",
-    "@wdio/browser-runner": "^9.3.0",
-    "@wdio/cli": "^9.3.0",
-    "@wdio/globals": "^9.3.0",
-    "@wdio/mocha-framework": "^9.2.8",
-    "@wdio/spec-reporter": "^9.2.14",
-    "@wdio/types": "^9.2.2",
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.9.3",
+    "@vitest/browser": "^2.1.5",
+    "@vitest/coverage-v8": "^2.1.5",
+    "@vitest/ui": "^2.1.5",
     "eslint": "^9.15.0",
-    "globals": "^15.12.0",
+    "jsdom": "^25.0.1",
+    "playwright": "^1.49.0",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.15.0",
-    "vite": "^5.4.11"
+    "vite": "^5.4.11",
+    "vitest": "^2.1.5"
   }
 }

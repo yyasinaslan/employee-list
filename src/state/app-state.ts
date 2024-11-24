@@ -4,7 +4,7 @@ import {signal} from "@lit-labs/preact-signals";
 import {Theme} from "../models/ui/theme-types.ts";
 
 
-class AppState {
+export class AppState {
 
     lang = signal('en');
 
@@ -34,9 +34,9 @@ class AppState {
 
     private applyTheme(theme: Theme) {
         if (theme === 'dark') {
-            document.documentElement.classList.remove('dark');
-        } else {
             document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
         }
     }
 
@@ -53,3 +53,4 @@ class AppState {
 }
 
 export const appState: AppState = new AppState(LocalStorageHelper.get('appState', {lang: 'en', theme: 'light'}));
+

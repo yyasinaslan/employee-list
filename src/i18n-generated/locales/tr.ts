@@ -9,7 +9,9 @@
     /* eslint-disable @typescript-eslint/no-explicit-any */
 
     export const templates = {
-      'hb42f09076a734afe': html`Sayfa başına <select @change="${0}">
+      'deleteConfirm': html`<b class="text-destructive">${0}
+                        ${1}</b> adlı çalışan silinecek!`,
+'hb42f09076a734afe': html`Sayfa başına <select @change="${0}">
                             ${1}
                         </select> öğe göster.
                     `,
@@ -66,7 +68,5 @@
 'sf1bc83d2509bafcf': `Telefon`,
 'sf71f9578ca2ddb9a': `Departman gerekli`,
 'sff561edb0ebb5a3b': `Önceki Sayfa`,
-'hb115904a4bf2c791': html`Selected employee record of <b class="text-destructive">${0}
-                        ${1}</b> will be deleted!`,
     };
   

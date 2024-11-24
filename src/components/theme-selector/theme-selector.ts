@@ -36,8 +36,8 @@ export class ThemeSelectorComponent extends SignalWatcher(LitElement) {
         return html`
             <button type="button" class="secondary"
                     @click=${() => this.toggleTheme()}
-                    title=${this.appState.theme.value !== 'light' ? msg('Switch to dark Theme') : msg('Switch to light Theme')}>
-                ${this.appState.theme.value == 'dark' ? this.sunIcon : this.moonIcon}
+                    title=${this.appState.theme.value === 'light' ? msg('Switch to dark Theme') : msg('Switch to light Theme')}>
+                ${this.appState.theme.value == 'dark' ? this.moonIcon : this.sunIcon}
             </button>
         `
     }

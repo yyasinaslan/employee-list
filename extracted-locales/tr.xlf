@@ -177,12 +177,6 @@
   <source>Are you sure?</source>
   <target>Emin misin?</target>
 </trans-unit>
-<trans-unit id="hb115904a4bf2c791">
-  <source>Selected employee record of <x id="0" equiv-text="&lt;b class=&quot;text-destructive&quot;&gt;${this.deleteDialogData?.firstName}&#10;                        ${this.deleteDialogData?.lastName}&lt;/b&gt;"/> will be deleted!</source>
-  <source><x id="0" equiv-text="&lt;b class=&quot;text-destructive&quot;&gt;${this.deleteDialogData?.firstName}&#10;                        ${this.deleteDialogData?.lastName}&lt;/b&gt;"/> adlı çalışan için kayıt silinecek!</source>
-  <source>Selected employee record of <x id="0" equiv-text="&lt;b class=&quot;text-destructive&quot;&gt;${this.deleteDialogData?.firstName}&#10;                        ${this.deleteDialogData?.lastName}&lt;/b&gt;"/> will be deleted!</source>
-  <source>Selected employee record of <x id="0" equiv-text="&lt;b class=&quot;text-destructive&quot;&gt;${this.deleteDialogData?.firstName}&#10;                        ${this.deleteDialogData?.lastName}&lt;/b&gt;"/> will be deleted!</source>
-</trans-unit>
 <trans-unit id="s2ceb11be2290bb1b">
   <source>Cancel</source>
   <target>İptal</target>
@@ -226,6 +220,10 @@
 <trans-unit id="sbce7e82d333308e2">
   <source>Page Not Found!</source>
  <target>Sayfa Bulunamadı!</target>
+</trans-unit>
+<trans-unit id="deleteConfirm">
+  <source>Selected employee record of <x id="0" equiv-text="&lt;b class=&quot;text-destructive&quot;&gt;${this.deleteDialogData?.firstName}&#10;                        ${this.deleteDialogData?.lastName}&lt;/b&gt;"/> will be deleted!</source>
+  <target><x id="0" equiv-text="&lt;b class=&quot;text-destructive&quot;&gt;${this.deleteDialogData?.firstName}&#10;                        ${this.deleteDialogData?.lastName}&lt;/b&gt;"/> adlı çalışan silinecek!</target>
 </trans-unit>
 </body>
 </file>
