@@ -84,7 +84,7 @@
 </trans-unit>
 <trans-unit id="sc4cb619d2fc19d71">
   <source>Select/Deselect <x id="0" equiv-text="${rowData.firstName} ${rowData.lastName}"/></source>
-  <source>Seç/Seçimi kaldır <x id="0" equiv-text="${rowData.firstName} ${rowData.lastName}"/></source>
+  <target>Seç/Seçimi kaldır <x id="0" equiv-text="${rowData.firstName} ${rowData.lastName}"/></target>
 </trans-unit>
 <trans-unit id="s09240e07b5b8d640">
   <source>ID</source>
@@ -180,6 +180,8 @@
 <trans-unit id="hb115904a4bf2c791">
   <source>Selected employee record of <x id="0" equiv-text="&lt;b class=&quot;text-destructive&quot;&gt;${this.deleteDialogData?.firstName}&#10;                        ${this.deleteDialogData?.lastName}&lt;/b&gt;"/> will be deleted!</source>
   <source><x id="0" equiv-text="&lt;b class=&quot;text-destructive&quot;&gt;${this.deleteDialogData?.firstName}&#10;                        ${this.deleteDialogData?.lastName}&lt;/b&gt;"/> adlı çalışan için kayıt silinecek!</source>
+  <source>Selected employee record of <x id="0" equiv-text="&lt;b class=&quot;text-destructive&quot;&gt;${this.deleteDialogData?.firstName}&#10;                        ${this.deleteDialogData?.lastName}&lt;/b&gt;"/> will be deleted!</source>
+  <source>Selected employee record of <x id="0" equiv-text="&lt;b class=&quot;text-destructive&quot;&gt;${this.deleteDialogData?.firstName}&#10;                        ${this.deleteDialogData?.lastName}&lt;/b&gt;"/> will be deleted!</source>
 </trans-unit>
 <trans-unit id="s2ceb11be2290bb1b">
   <source>Cancel</source>
@@ -216,6 +218,14 @@
 <trans-unit id="s33f85f24c0f5f008">
   <source>Save</source>
   <target>Kaydet</target>
+</trans-unit>
+<trans-unit id="s2c6360551f909313">
+  <source>Employee not found!</source>
+  <target>Çalışan bulunamadı!</target>
+</trans-unit>
+<trans-unit id="sbce7e82d333308e2">
+  <source>Page Not Found!</source>
+ <target>Sayfa Bulunamadı!</target>
 </trans-unit>
 </body>
 </file>

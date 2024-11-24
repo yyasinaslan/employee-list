@@ -24,6 +24,7 @@
 's27707a7616f7f789': `İsim gerekli`,
 's2c2b04f2561a1d4b': `Analiz`,
 's2c57913ffd36d298': `İsim`,
+'s2c6360551f909313': `Çalışan bulunamadı!`,
 's2ca0e553b8103993': `Karanlık temaya geç`,
 's2ceb11be2290bb1b': `İptal`,
 's3080738078fda91c': `Liste Modu`,
@@ -51,7 +52,9 @@
 'sab459038e3c6bcb8': `İsim`,
 'sacc4d771f79ccced': `Orta Seviye`,
 'sb7c9b2995d6869b1': `Soyisim gerekli`,
+'sbce7e82d333308e2': `Sayfa Bulunamadı!`,
 'sc1611c0558728a2a': `Pozisyon`,
+'sc4cb619d2fc19d71': str`Seç/Seçimi kaldır ${0} ${1}`,
 'sc6c004e7bc8a7f0b': `Aydınlık temaya geç`,
 'scba00271d50c74f6': `Çalışanlar`,
 'sd1dd00fc6f052e83': `Sonraki Sayfa`,
@@ -63,7 +66,6 @@
 'sf1bc83d2509bafcf': `Telefon`,
 'sf71f9578ca2ddb9a': `Departman gerekli`,
 'sff561edb0ebb5a3b': `Önceki Sayfa`,
-'sc4cb619d2fc19d71': str`Select/Deselect ${0} ${1}`,
 'hb115904a4bf2c791': html`Selected employee record of <b class="text-destructive">${0}
                         ${1}</b> will be deleted!`,
     };

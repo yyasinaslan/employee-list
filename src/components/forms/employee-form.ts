@@ -42,7 +42,7 @@ export class EmployeeForm extends LitElement {
     private getFormData() {
         if (!this.formRef) return null;
         const formData = new FormData(this.formRef);
-        let data: Record<string, any> = {};
+        const data: Record<string, any> = {};
         for (const d of formData.entries()) {
             data[d[0]] = d[1];
         }

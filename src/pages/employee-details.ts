@@ -112,7 +112,7 @@ export class EmployeeDetailsComponent extends SignalWatcher(LitElement) {
 
     protected render() {
         if (this.notFound) {
-            return html`<h1 class="text-destructive">Employee not found!</h1>`
+            return html`<h1 class="text-destructive">${msg('Employee not found!')}</h1>`
         }
         return html`
             <h1>${msg('Edit employee')}</h1>

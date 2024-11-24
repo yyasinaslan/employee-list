@@ -302,11 +302,8 @@ export class EmployeeListComponent extends SignalWatcher(LitElement) {
         ...sharedStyles,
         css`
             :host {
-                display: flex;
-                flex-direction: column;
             }
 
-            
 
             .toolbar {
                 display: flex;
@@ -322,10 +319,10 @@ export class EmployeeListComponent extends SignalWatcher(LitElement) {
             }
 
             .data-view {
-                flex: 1 1 auto;
-                height: 100px;
+                //height: 200px;
 
-                overflow: auto;
+                overflow-x: auto;
+                //overflow-y: visible;
             }
 
             input[type=checkbox] {
@@ -346,8 +343,10 @@ export class EmployeeListComponent extends SignalWatcher(LitElement) {
                         background: hsl(var(--background));
                         padding: 1rem 0.5rem;
                         vertical-align: middle;
-                        position: sticky;
-                        top: 0;
+                        //position: sticky;
+                        //top: 60px;
+
+                        white-space: nowrap;
                     }
                 }
 
@@ -362,11 +361,17 @@ export class EmployeeListComponent extends SignalWatcher(LitElement) {
                         padding: 0.5rem;
                         border-bottom: 1px solid hsl(var(--border));
                         vertical-align: middle;
+                        white-space: nowrap;
+
                     }
                 }
             }
 
             .pagination {
+                position: sticky;
+                bottom: 0;
+                background: hsl(var(--background));
+                
                 display: flex;
                 justify-content: center;
                 align-items: center;

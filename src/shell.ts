@@ -3,6 +3,7 @@ import {customElement} from "lit/decorators.js";
 import {routes} from "./routes.ts";
 import {Router} from "@lit-labs/router";
 import {sharedStyles} from "./styles/shared-styles.ts";
+import {headerHeight, mediaBreakpoints} from "./constants/media-breakpoints.ts";
 
 
 @customElement('app-shell')
@@ -12,27 +13,23 @@ export class AppShell extends LitElement {
         ...sharedStyles,
         css`
             :host {
-                display: grid;
-                grid-template-rows: auto 1fr;
-                justify-content: stretch;
-                align-content: stretch;
-
-                min-height: 100svh;
-                max-height: 100svh;
             }
 
             app-header {
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                height: ${headerHeight}px;
+
                 background-color: hsl(var(--background));
                 border-bottom: 1px solid hsl(var(--border));
-
-                padding: 1rem;
             }
 
             main {
                 padding: 1rem;
-                display: grid;
-                justify-content: stretch;
-                align-content: stretch;
+                //display: grid;
+                //justify-content: stretch;
+                //align-content: stretch;
             }
         `
     ]
