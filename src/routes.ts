@@ -1,10 +1,10 @@
 import {RouteConfig} from "@lit-labs/router";
 import {html} from "lit";
+import {environment} from "./environment/environment.ts";
 
 export const routes: RouteConfig[] = [
     {
-
-        path: '/',
+        path: environment.baseUrl + '/',
         render: () => html`
             <app-home></app-home>`,
         enter: async () => {
@@ -14,7 +14,7 @@ export const routes: RouteConfig[] = [
     },
     {
 
-        path: '/employees',
+        path: environment.baseUrl + '/employees',
         render: () => html`
             <app-employee-list></app-employee-list>`,
         enter: async () => {
@@ -24,7 +24,7 @@ export const routes: RouteConfig[] = [
     },
     {
 
-        path: '/employees/add',
+        path: environment.baseUrl + '/employees/add',
         render: () => html`
             <app-employee-add></app-employee-add>`,
         enter: async () => {
@@ -34,7 +34,7 @@ export const routes: RouteConfig[] = [
     },
     {
 
-        path: '/employees/:id',
+        path: environment.baseUrl + '/employees/:id',
         render: ({id}) => html`
             <app-employee-details .id=${id}></app-employee-details>`,
         enter: async () => {
@@ -43,7 +43,7 @@ export const routes: RouteConfig[] = [
         }
     },
     {
-        path: '(.*)',
+        path: environment.baseUrl + '(.*)',
         render: () => html`
             <app-not-found></app-not-found>`,
         enter: async () => {

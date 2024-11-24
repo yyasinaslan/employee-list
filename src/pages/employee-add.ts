@@ -6,6 +6,7 @@ import {InferType} from "yup";
 import {createEmployeeSchema} from "../models/employee.ts";
 import {employeeState} from "../state/employees-state.ts";
 import {RouterHelper} from "../helpers/router-helper.ts";
+import {environment} from "../environment/environment.ts";
 
 
 @localized()
@@ -30,7 +31,7 @@ export class EmployeeAddComponent extends LitElement {
 
     addEmployee(data: InferType<typeof createEmployeeSchema>) {
         employeeState.addEmployee(data);
-        RouterHelper.navigate('/employees')
+        RouterHelper.navigate(environment.baseUrl + '/employees')
     }
 
     protected render() {

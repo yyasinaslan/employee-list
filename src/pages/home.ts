@@ -2,6 +2,7 @@ import {css, html, LitElement} from "lit";
 import {customElement} from "lit/decorators.js";
 import {localized, msg} from "@lit/localize";
 import {sharedStyles} from "../styles/shared-styles.ts";
+import {environment} from "../environment/environment.ts";
 
 @localized()
 @customElement('app-home')
@@ -35,8 +36,8 @@ export class HomeComponent extends LitElement {
         return html`
             <h1>${msg('Home')}</h1>
             <div class="shortcuts">
-                <a href="/employees">${msg('Employee List')}</a>
-                <a href="/employees/add">${msg('Add New Employee')}</a>
+                <a href=${environment.baseUrl + '/employees'}>${msg('Employee List')}</a>
+                <a href=${environment.baseUrl + '/employees/add'}>${msg('Add New Employee')}</a>
             </div>
         `
     }

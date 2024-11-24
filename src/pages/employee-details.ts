@@ -11,6 +11,7 @@ import {formatDate} from "../helpers/date-helper.ts";
 import {getLocale} from "../localization.ts";
 import {departmentList} from "../models/department.ts";
 import {positionList} from "../models/position.ts";
+import {environment} from "../environment/environment.ts";
 
 const formFields = {
     firstName: () => msg("First name"),
@@ -97,7 +98,7 @@ export class EmployeeDetailsComponent extends SignalWatcher(LitElement) {
     confirmUpdate() {
         const data = this.formData!;
         employeeState.updateEmployee({id: this.employee.id, ...data});
-        RouterHelper.navigate('/employees')
+        RouterHelper.navigate(environment.baseUrl + '/employees')
     }
 
     private getDetail(key: string, data: any) {

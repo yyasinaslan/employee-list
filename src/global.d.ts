@@ -5,5 +5,6 @@ declare global {
     interface Window {
         // Declare a global router
         router: Router;
+        baseUrl: string;
     }
 }
